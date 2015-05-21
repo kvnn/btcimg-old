@@ -1,7 +1,7 @@
 README
 ----------
 ## Overview
-BtcImg is a Django web application that blurs an image upon upload, and progressively unblurs it as Bitcoin is sent to its address. Once 1 BTC has been sent to the address, the image is completely unblurred.
+[BtcImg](http://btcimg.com) is a Django web application that blurs an image upon upload, and progressively unblurs it as Bitcoin is sent to its address. Once 1 BTC has been sent to the address, the image is completely unblurred.
 
 
 ## Environment
@@ -26,6 +26,6 @@ At this point, the Django server should be up and running locally. Please file a
 
 
 ## Author
-Kevin Riggen
-[kriggen@gmail.com](http://mailto:kriggen@gmail.com)
+Kevin Riggen |
+[kriggen@gmail.com](http://mailto:kriggen@gmail.com) |
 [kevinriggen.com](http://kevinriggen.com)
