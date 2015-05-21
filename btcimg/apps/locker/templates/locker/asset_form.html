@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ STATIC_URL }}scss/communications.scss" type="text/x-scss" media="all" />
+<link rel="stylesheet" href="{{ STATIC_URL }}scss/forms.scss" type="text/x-scss" media="all" />
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    {% include "form.html" with submit_text="Rock &amp; Roll"%}
+</div>
+{% endblock %}
+

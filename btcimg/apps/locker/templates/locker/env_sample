@@ -1,0 +1,7 @@
+export DJANGO_SETTINGS_MODULE="btcimg.settings.dev"
+export DB_ENGINE="django.db.backends.postgresql_psycopg2"
+export DB_NAME="btcimg"
+export DB_HOST="127.0.0.1"
+export DB_PORT="5432"
+export DB_USERNAME="postgresuser"
+export DB_PASSWORD=""

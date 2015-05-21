@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ asset.name }}{% endblock %}
+
+{% block headerLead %}
+    
+{% endblock %}
+
+{% block js %}
+    <script src="{{ STATIC_URL }}js/locker.detail.js"></script>
+{% endblock %}
+
+{% block content %}
+    {% if not asset.blocked %}
+    <div class="row img-detail">
+        <div id="asset" data-address="{{ asset.btc_address }}" class="image">
+            {% if asset.public_image and asset.public_image.url %}
+            <a href="{{ public_image.image.url }}">
+                <img src="{{ asset.public_image.url }}">
+            </a>
+            {% endif %}
+        </div>
+        <div class="info">
+            <h1 class="">{{ asset.name }}</h1>
+            {% if btc_left > 0 %}
+            <p><span id="btcLeft">{{ btc_left }}</span> BTC remaining</p>
+            {% else %}
+            <p>This image has been unveiled.</p>
+            {% endif %}
+            <p><strong>Address:</strong> <a class="chill" href="bitcoin:1LkWrvzCS6awnmC4CYn7XZm4K17YLUwVT6">{{ asset.btc_address }}</a> <a target="_" href="https://bitcoin.org/en/getting-started"><i class="glyphicon glyphicon-question-sign"></i></a></p>
+        </div>
+    </div>
+    {% else %}
+    <h2>Sorry, this img has been blocked. If you believe this is in error, you can <a href="mailto:kriggen@gmail.com">email me</a>.</h2>
+    {% endif %}
+{% endblock %}

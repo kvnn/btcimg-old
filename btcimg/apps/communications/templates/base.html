@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<title>{% block title %}BTC Img{% endblock %}</title>
+
+	{% load compress %}
+
+	<link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon.png">
+
+	{% compress css %}
+		<link rel="stylesheet" href="{{ STATIC_URL }}scss/_bootstrap.scss" type="text/x-scss" media="all" />
+		<link rel="stylesheet" href="{{ STATIC_URL }}scss/base.scss" type="text/x-scss" media="all" />
+		{% block css %}{% endblock %}
+	{% endcompress %}
+	
+	{% block uncompressed_css %}{% endblock %}
+		
+	{% compress js %}
+		<script src="{{ STATIC_URL }}js/jquery-2.1.3.min.js"></script>
+		<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+		{% block js %}
+		{% endblock %}
+	{% endcompress %}
+
+	{% block uncompressed_js %}{% endblock %}
+	
+</head>
+
+<body class="{% block bodyClasses %}{% endblock %}">
+	<div class="wrap">
+		{% include "nav.html" %}
+
+		<div class="main-content">
+			{% block full_content %}{% endblock %}
+			<div class="container main-container">
+			    {% block content %}{% endblock %}
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">
+				Built by <a target="_" class="" href="http://kevinriggen.com">Kevin</a> | <a class="" href="/privacy">privacy</a> | <a class="" href="/terms">terms of service </a> | &copy; Clamor LLC
+			</p>
+		</div>	
+	</footer>
+
+
+</body>
+
+
+</html>

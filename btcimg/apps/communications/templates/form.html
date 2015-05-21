@@ -1,0 +1,11 @@
+{% load bootstrap %}
+
+{% block content %}
+<form enctype="multipart/form-data" class="col-md-6" method="POST" action="">{% csrf_token %}
+    {% csrf_token %}
+    {{ form|bootstrap }}
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">{% firstof submit_text "Submit" %}</button>
+    </div>
+</form>
+{% endblock %}

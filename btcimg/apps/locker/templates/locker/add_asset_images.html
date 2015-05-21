@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block headerTitle %}
+2. Upload Images
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ STATIC_URL }}scss/communications.scss" type="text/x-scss" media="all" />
+<link rel="stylesheet" href="{{ STATIC_URL }}scss/forms.scss" type="text/x-scss" media="all" />
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <p class="col-sm-12">These images will become public once {{ asset.unlock_value }} bitcoins have been sent to {{ asset.btc_address }}.</p>
+        <p class="col-sm-12 warning">You can add images at any time by visiting this URL, but you cannot remove them.</p>
+    </div>
+    
+    <div class="row">
+        <form class="col-sm-12" enctype="multipart/form-data" method="POST" action="">{% csrf_token %}
+            <!-- Errors -->
+            {% if form.errors %}
+            <ul class="error errorlist">
+                {% for error in form.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            <!-- Image upload -->
+            <div class="form-group">
+                <input type="file" multiple="multiple" name="images">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">
+                {% if asset.assetimage_set.count %}
+                    Add to my {{ asset.assetimage_set.count }} other images
+                {% else %}
+                    Upload
+                {% endif %}
+              </button>
+            </div>
+        </form>
+    </form>
+    <div class="row">
+        <h2 class="col-sm-12">OR</h2>
+        <p class="col-sm-12"><a href="{{ asset.get_absolute_url }}">Go to the teaser page</a> for {{ asset.name }}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+.thumbnail {
+    padding: 0px;
+
+    .img-wrap {
+        display: block;
+        overflow: hidden;
+        height: 140px;
+    }
+
+    .caption {
+        padding: 0px 9px;
+    }
+
+    h3 {
+        margin-top: 8px;
+        font-size: 1.25em;
+        font-weight: normal;
+        color: #777;
+        text-align: center;
+    }
+}
+
+#more {
+    margin: 40px 0;
+}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ STATIC_URL }}scss/communications.scss" type="text/x-scss" media="all" />
+{% endblock %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4 col-xs-12 crux one">
+            <h3 class="clearfix">1. Upload an image, we blur it</h3>
+            <img src="{{ STATIC_URL }}img/example-public-1.png">
+        </div>
+        <div class="col-md-4 col-xs-12 crux three">
+            <h3 class="clearfix">2. It unblurs as people send you BTC</h3>
+            <img src="{{ STATIC_URL }}img/example-public-2.png">
+        </div>
+        <div class="col-md-4 col-xs-12 crux four">
+            <h3 class="clearfix">3. At 1 BTC<sup>*</sup>, the image unveils</h3>
+            <img src="{{ STATIC_URL }}img/example-private-1.png">
+        </div>
+    </div>
+    <div class="row">
+        <p class="pull-right">* <a href="mailto:kriggen@gmail.com">email me</a> for more options</p>
+    </div>
+{% endblock %}
